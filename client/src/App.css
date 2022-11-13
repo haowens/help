@@ -1,0 +1,144 @@
+.App {
+  height: 100vh;
+  padding: 0px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: flex-start;
+}
+.navb {
+  border: black;
+  padding: 10px;
+  background-color: rgb(221, 221, 221);
+  font-size: x-large;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 10px;
+}
+
+h1 {
+  background-color: rgb(201, 255, 237);
+}
+
+h2 {
+  margin: 0px;
+}
+
+p {
+  margin: 0px;
+}
+
+.home1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.home2{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  justify-content: center;
+}
+
+.books {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(209, 197, 253);
+}
+
+.book {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  align-items: center;
+  padding: 10px 10px 10px 10px;
+  /* background-color: aquamarine; */
+}
+
+.music {
+  display: flex;
+  flex-direction: column;
+  background-color: pink;
+  /* gap: 10px; */
+}
+
+.mix {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px;
+}
+
+.title-url{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:0px;
+  flex-wrap: wrap;
+}
+
+.music-buttons{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+img {
+  width: 100px;
+  /* height: 50px; */
+  object-fit: cover;
+  background-color: rgb(184, 252, 229);
+  padding: 5px;
+}
+
+.delete {
+  border: border;
+  padding: 3px 6px;
+  background-color: white;
+  cursor: pointer;
+  border: 1px solid rgb(245, 191, 191);
+  color: rgb(242, 100, 100);
+}
+
+.update {
+  border: border;
+  padding: 3px 6px;
+  background-color: white;
+  cursor: pointer;
+  border: 1px solid rgb(204, 204, 243);
+  color: rgb(139, 139, 234);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input {
+  width: 250px;
+  padding: 10px;
+  border: 1px solid grey;
+}
+
+.addb {
+  border: black;
+  padding: 10px;
+  background-color: rgb(221, 221, 221);
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+
