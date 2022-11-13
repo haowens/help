@@ -36,17 +36,18 @@ const BooksFave = () => {
                     <div className='title-url'>
                         <h2>{book.title}</h2>
                         <p>{book.author}</p>
-                        <a href={book.url} target="_blank">{book.url}</a>
+                        <a href={book.url} target="_blank" rel="noreferrer">{book.url}</a>
                     </div>    
                     <div className='music-buttons'>
-                        <button className="delete" onClick={()=> handleDelete(book.id)}>Delete</button>
-                        <button className="update"><Link to={`/updatebooksfave/${book.id}`}>Update</Link></button>
+                        <button className="delete" onClick={()=> handleDelete(book.id)}>delete</button>
+                        <button className="update"><Link to={`/updatebooksfave/${book.id}`}>update</Link></button>
+                        <button className='quotes'>quotes</button>
                     </div>
                  </div>
                 ))}
             </div>
             <button className='addb'>
-                <Link to="/addbooksfave">Add new book</Link>
+                <Link to="/addbooksfave">add new article</Link>
             </button>    
         </div>
     )

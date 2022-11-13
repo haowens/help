@@ -5,19 +5,15 @@ import NavBar from "../NavBar";
 
 const Home = () => {
     return(
-        <div className="home1">
+        <React.Fragment> 
+            <div className="home1">
+            <NavBar/>
             <div className="home2">
-            <React.Fragment> 
-                <div className="home1">
-                <NavBar/>
-                <div className="home2">
-                <Books/>
-                <Music/>
-                </div>
-                </div>
-            </React.Fragment>
+            <Books/>
+            <Music/>
             </div>
-        </div>   
+            </div>
+        </React.Fragment>  
     );
 }
 

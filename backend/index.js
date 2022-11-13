@@ -185,7 +185,7 @@ app.delete("/booksfave/:id", (req, res) => {
 
 app.put("/booksfave/:id", (req, res) => {
     const bookId = req.params.id;
-    const q = "UPDATE books SET `title` = ?, `author`=?, `url`=?, `cover` = ? WHERE id = ?";
+    const q = "UPDATE booksfave SET `title` = ?, `author`=?, `url`=?, `cover` = ? WHERE id = ?";
     const values = [
         req.body.title, 
         req.body.author,

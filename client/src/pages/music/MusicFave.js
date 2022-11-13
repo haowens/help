@@ -35,17 +35,17 @@ const MusicFave = () => {
                     {mix.image && <img src={mix.image} alt=""/> }
                     <div className='title-url'>
                         <h2>{mix.title}</h2>
-                        <a href={mix.url} target="_blank">{mix.url}</a>
+                        <a href={mix.url} target="_blank" rel="noreferrer">{mix.url}</a>
                     </div>   
                     <div className='music-buttons'> 
-                        <button className="delete" onClick={()=> handleDelete(mix.id)}>Delete</button>
-                        <button className="update"><Link to={`/updatemusicfave/${mix.id}`}>Update</Link></button>
+                        <button className="delete" onClick={()=> handleDelete(mix.id)}>delete</button>
+                        <button className="update"><Link to={`/updatemusicfave/${mix.id}`}>update</Link></button>
                     </div>
                  </div>
                 ))}
             </div>
             <button className='addb'>
-                <Link to="/addmusicfave">Add new mix</Link>
+                <Link to="/addmusicfave">add new mix</Link>
             </button>    
         </div>
     )

@@ -9,6 +9,7 @@ import Favorite from './pages/Favorite';
 import AddMusicFave from './pages/music/AddMusicFave';
 import AddBooksFave from './pages/writing/AddBooksFave';
 import UpdateBooksFave from './pages/writing/UpdateBooksFave';
+import UpdateMusicFave from './pages/music/UpdateMusicFave';
 // import Home from './pages/Home';
 
 function App() {
@@ -24,7 +25,8 @@ function App() {
           <Route path="/favorite/" element={<Favorite/>}/>
           <Route path="/addmusicfave" element={<AddMusicFave/>}/>
           <Route path="/addbooksfave" element={<AddBooksFave/>}/>
-          <Route path="/updatebooksfave" element={<UpdateBooksFave/>}/>
+          <Route path="/updatebooksfave/:id" element={<UpdateBooksFave/>}/>
+          <Route path="/updatemusicfave/:id" element={<UpdateMusicFave/>}/>
         </Routes>
       </BrowserRouter>
     </div>
