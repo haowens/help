@@ -198,6 +198,52 @@ app.put("/booksfave/:id", (req, res) => {
     });
 });
 
+//quotes
+app.get("/quotes", (req, res) => {
+    const q = "SELECT * FROM quotes"
+    db.query(q,(err, data) => {
+        if (err) return res.json(err);
+        return res.json(data);
+    });
+});
+
+app.post("/quotes", (req, res) => {
+    const q = "INSERT INTO quotes (`id`, `q1`, `q2`, `q3`) VALUES (?)"
+    const values = [
+        req.body.id, 
+        req.body.q1,
+        req.body.q2,
+        req.body.q3
+    ];
+    db.query(q, [values], (err, data) => {
+        if(err) return res.json(err)
+        return res.json("Book has been created successfully.")
+    });
+});
+
+app.delete("/quotes/:id", (req, res) => {
+    const bookId = req.params.id;
+    const q = "DELETE FROM quotes WHERE id = ?"
+    db.query(q, [bookId], (err, data) => {
+        if (err) return res.json(err);
+        return res.json("Quotes have been deleted successfully.");
+    });
+});
+
+app.put("/quotes/:id", (req, res) => {
+    const bookId = req.params.id;
+    const q = "UPDATE quotes SET `q1` = ?, `q2` = ?, `q3` = ? WHERE id = ?";
+    const values = [
+        req.body.q1, 
+        req.body.q2,
+        req.body.q3
+    ];
+    db.query(q, [...values, bookId], (err, data) => {
+        if (err) return res.json(err);
+        return res.json("Quotes have been updated successfully.");
+    });
+});
+
 app.listen(8800, () => {
     console.log("connected to backend")
 });
