@@ -13,7 +13,7 @@
   list-style: none;
   justify-content: flex-start;
   padding: 5px; 
-  background-color: rgb(238, 237, 237);
+  background-color: rgb(216, 216, 216);
 }
 .navb {
   border: black;
@@ -59,32 +59,40 @@ p {
 .books {
   display: flex;
   flex-direction: column;
-  background-color: rgb(209, 197, 253);
+  background-color: rgb(216, 216, 216);
 }
 
 .book {
+  border: 1.5px solid grey;
   flex: 1;
   display: flex;
   flex-direction: row;
   margin: 10px;
+  gap: 5px;
   align-items: center;
-  padding: 10px 10px 10px 10px;
-  /* background-color: aquamarine; */
+  justify-content: space-between;
+  padding: 5px 5px 5px 5px;
+  background-color: rgb(205, 191, 255);
 }
 
 .music {
   display: flex;
   flex-direction: column;
-  background-color: pink;
+  background-color: rgb(216, 216, 216);
   /* gap: 10px; */
 }
 
 .mix {
   flex: 1;
+  border: 1.5px solid grey;
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  padding: 5px 5px 5px 5px;
   margin: 10px;
+  background-color: pink;
 }
 
 .title-url{
@@ -112,25 +120,27 @@ img {
 }
 
 .delete {
-  border:none;
+  border: none;
+  width: 60px;
   padding: 3px 6px;
-  background-color: white;
+  background-color: rgb(216, 216, 216);
   cursor: pointer;
   color: rgb(0, 0, 0);
 }
 
 .update {
   border: none;
+  width: 60px;
   padding: 3px 6px;
-  background-color: white;
+  background-color: rgb(216, 216, 216);
   cursor: pointer;
 }
 
-.quotes {
+.quoteb {
   border: none;
+  width: 60px;
   padding: 3px 6px;
-  background-color: black;
-  color: white;
+  background-color: rgb(216, 216, 216);
   cursor: pointer;
 }
 
@@ -154,5 +164,19 @@ input {
   cursor: pointer;
   margin-top: 10px;
 }
+
+.quotes {
+  border: 1.5px solid grey;
+  width: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 30px;
+  margin: 20px;
+  padding: 15px 15px 15px 15px;
+  background-color: rgb(205, 191, 255);
+  align-items: center;
+}
+
 
 

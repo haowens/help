@@ -10,6 +10,7 @@ import AddMusicFave from './pages/music/AddMusicFave';
 import AddBooksFave from './pages/writing/AddBooksFave';
 import UpdateBooksFave from './pages/writing/UpdateBooksFave';
 import UpdateMusicFave from './pages/music/UpdateMusicFave';
+import Quotes from './pages/writing/Quotes';
 // import Home from './pages/Home';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/addbooksfave" element={<AddBooksFave/>}/>
           <Route path="/updatebooksfave/:id" element={<UpdateBooksFave/>}/>
           <Route path="/updatemusicfave/:id" element={<UpdateMusicFave/>}/>
+          <Route path="/booksfave/:id" element={<Quotes/>}/>
         </Routes>
       </BrowserRouter>
     </div>

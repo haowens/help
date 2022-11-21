@@ -41,7 +41,7 @@ const BooksFave = () => {
                     <div className='music-buttons'>
                         <button className="delete" onClick={()=> handleDelete(book.id)}>delete</button>
                         <button className="update"><Link to={`/updatebooksfave/${book.id}`}>update</Link></button>
-                        <button className='quotes'>quotes</button>
+                        <button className='quoteb'><Link to={`/booksfave/${book.id}`}>quotes</Link></button>
                     </div>
                  </div>
                 ))}
