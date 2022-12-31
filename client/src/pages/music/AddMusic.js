@@ -6,7 +6,8 @@ const AddMusic = () => {
     const [mix, setMix] = useState({
         title: "",
         url: "",
-        image: ""
+        image: "",
+        music: 0
     });
 
     const navigate = useNavigate();
@@ -25,9 +26,19 @@ const AddMusic = () => {
        }
     };
 
+    const linkStyle = {
+        padding: "5px 40px",
+        background: "black",
+        textDecoration: "none",
+        color: "white",
+        fontSize: "16px",
+        fontWeight: "bold",
+        fontFamily: "Merriweather",     
+    };
+
     return (
         <div className='form'>
-            <h1>Add New Mix</h1>
+            <h2 className="addh">add new album/podcast/movie/idk</h2>
             <input 
                 type="text" 
                 placeholder="title" 
@@ -46,7 +57,13 @@ const AddMusic = () => {
                 onChange={handleChange} 
                 name="image"
             />
-            <button className="addb" onClick={handleClick}>Add</button>
+            <input 
+                type="int" 
+                placeholder="is music?" 
+                onChange={handleChange} 
+                name="music"
+            />
+            <button style={linkStyle} onClick={handleClick}>submit</button>
         </div>
     )
 }

@@ -24,12 +24,13 @@ app.get("/books", (req, res) => {
 });
 
 app.post("/books", (req, res) => {
-    const q = "INSERT INTO books (`title`, `author`, `url`, `cover`) VALUES (?)"
+    const q = "INSERT INTO books (`title`, `author`, `url`, `cover`, `book`) VALUES (?)"
     const values = [
         req.body.title, 
         req.body.author,
         req.body.url,
-        req.body.cover
+        req.body.cover,
+        req.body.book
     ];
     db.query(q, [values], (err, data) => {
         if(err) return res.json(err)
@@ -46,21 +47,6 @@ app.delete("/books/:id", (req, res) => {
     });
 });
 
-app.put("/books/:id", (req, res) => {
-    const bookId = req.params.id;
-    const q = "UPDATE books SET `title` = ?, `author`=?, `url`=?, `cover` = ? WHERE id = ?";
-    const values = [
-        req.body.title, 
-        req.body.author,
-        req.body.url,
-        req.body.cover
-    ];
-    db.query(q, [...values, bookId], (err, data) => {
-        if (err) return res.json(err);
-        return res.json("Book has been updated successfully.");
-    });
-});
-
 //music
 app.get("/music", (req, res) => {
     const q = "SELECT * FROM music"
@@ -71,11 +57,12 @@ app.get("/music", (req, res) => {
 });
 
 app.post("/music", (req, res) => {
-    const q = "INSERT INTO music (`title`, `url`, `image`) VALUES (?)"
+    const q = "INSERT INTO music (`title`, `url`, `image`, `music`) VALUES (?)"
     const values = [
         req.body.title, 
         req.body.url,
-        req.body.image
+        req.body.image,
+        req.body.music
     ];
     db.query(q, [values], (err, data) => {
         if(err) return res.json(err)
@@ -92,19 +79,6 @@ app.delete("/music/:id", (req, res) => {
     });
 });
 
-app.put("/music/:id", (req, res) => {
-    const mixId = req.params.id;
-    const q = "UPDATE music SET `title` = ?, `url`=?, `image`=? WHERE id = ?";
-    const values = [
-        req.body.title, 
-        req.body.url,
-        req.body.image,
-    ];
-    db.query(q, [...values, mixId], (err, data) => {
-        if (err) return res.json(err);
-        return res.json("Mix has been updated successfully.");
-    });
-});
 
 // fave music
 app.get("/musicfave", (req, res) => {
@@ -137,19 +111,6 @@ app.delete("/musicfave/:id", (req, res) => {
     });
 });
 
-app.put("/musicfave/:id", (req, res) => {
-    const mixId = req.params.id;
-    const q = "UPDATE musicfave SET `title` = ?, `url`=?, `image`=? WHERE id = ?";
-    const values = [
-        req.body.title, 
-        req.body.url,
-        req.body.image,
-    ];
-    db.query(q, [...values, mixId], (err, data) => {
-        if (err) return res.json(err);
-        return res.json("Mix has been updated successfully.");
-    });
-});
 
 //fave writing
 app.get("/booksfave", (req, res) => {
@@ -183,24 +144,9 @@ app.delete("/booksfave/:id", (req, res) => {
     });
 });
 
-app.put("/booksfave/:id", (req, res) => {
-    const bookId = req.params.id;
-    const q = "UPDATE booksfave SET `title` = ?, `author`=?, `url`=?, `cover` = ? WHERE id = ?";
-    const values = [
-        req.body.title, 
-        req.body.author,
-        req.body.url,
-        req.body.cover
-    ];
-    db.query(q, [...values, bookId], (err, data) => {
-        if (err) return res.json(err);
-        return res.json("Book has been updated successfully.");
-    });
-});
-
-//quotes
-app.get("/quotes", (req, res) => {
-    const q = "SELECT * FROM quotes"
+//article quotes
+app.get("/article_quotes", (req, res) => {
+    const q = "SELECT * FROM article_quotes"
     db.query(q,(err, data) => {
         if (err) return res.json(err);
         return res.json(data);
@@ -208,12 +154,10 @@ app.get("/quotes", (req, res) => {
 });
 
 app.post("/quotes", (req, res) => {
-    const q = "INSERT INTO quotes (`id`, `q1`, `q2`, `q3`) VALUES (?)"
+    const q = "INSERT INTO article_quotes (`id`, `quote`) VALUES (?)"
     const values = [
         req.body.id, 
-        req.body.q1,
-        req.body.q2,
-        req.body.q3
+        req.body.quote,
     ];
     db.query(q, [values], (err, data) => {
         if(err) return res.json(err)
@@ -221,26 +165,12 @@ app.post("/quotes", (req, res) => {
     });
 });
 
-app.delete("/quotes/:id", (req, res) => {
-    const bookId = req.params.id;
-    const q = "DELETE FROM quotes WHERE id = ?"
-    db.query(q, [bookId], (err, data) => {
+app.delete("/article_quotes/:id", (req, res) => {
+    const quoteId = req.params.id;
+    const q = "DELETE FROM article_quotes WHERE id = ?"
+    db.query(q, [quoteId], (err, data) => {
         if (err) return res.json(err);
         return res.json("Quotes have been deleted successfully.");
-    });
-});
-
-app.put("/quotes/:id", (req, res) => {
-    const bookId = req.params.id;
-    const q = "UPDATE quotes SET `q1` = ?, `q2` = ?, `q3` = ? WHERE id = ?";
-    const values = [
-        req.body.q1, 
-        req.body.q2,
-        req.body.q3
-    ];
-    db.query(q, [...values, bookId], (err, data) => {
-        if (err) return res.json(err);
-        return res.json("Quotes have been updated successfully.");
     });
 });
 

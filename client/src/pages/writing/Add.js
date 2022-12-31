@@ -7,7 +7,8 @@ const Add = () => {
         title: "",
         author: "",
         url: "",
-        cover: ""
+        cover: "",
+        book: 0
     });
 
     const navigate = useNavigate();
@@ -26,9 +27,19 @@ const Add = () => {
        }
     };
 
+    const linkStyle = {
+        padding: "5px 40px",
+        background: "black",
+        textDecoration: "none",
+        color: "white",
+        fontSize: "16px",
+        fontWeight: "bold",
+        fontFamily: "Merriweather",     
+    };
+
     return (
         <div className='form'>
-            <h1>Add New Book</h1>
+            <h2 className='addh'>add new book or article</h2>
             <input 
                 type="text" 
                 placeholder="title" 
@@ -53,7 +64,13 @@ const Add = () => {
                 onChange={handleChange} 
                 name="cover"
             />
-            <button className="addb" onClick={handleClick}>Add</button>
+            <input 
+                type="int" 
+                placeholder="is book?" 
+                onChange={handleChange} 
+                name="book"
+            />
+            <button style={linkStyle} onClick={handleClick}>submit</button>
         </div>
     )
 }
